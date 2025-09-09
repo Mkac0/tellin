@@ -6,7 +6,7 @@ const User = require('../models/user.js');
 router.get('/', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
-    res.render('content/index.ejs', {
+    res.render('posts/index.ejs', {
       posts: currentUser?.posts || [],
     });
   } catch (error) {

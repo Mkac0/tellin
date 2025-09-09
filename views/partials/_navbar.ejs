@@ -6,7 +6,7 @@
       <a href="/users">Explore tellin'</a>
 
       <% if (user) { %>
-        <a href="/users/<%= user._id %>/foods">View my Posts</a>
+        <a href="/users/<%= user._id %>/content">View my Posts</a>
         <a href="/auth/sign-out">Sign Out</a>
       <% } else { %>
         <a class="authlink" href="/auth/sign-in">Sign In</a>

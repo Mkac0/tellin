@@ -5,7 +5,7 @@ module.exports.index = async (req, res, next) => {
         const users = await User.find({}, { username: 1, avatar: 1, bio: 1 })
             .sort({ username: 1 })
             .lean();
-            res.render('users/index', {
+            res.render('/content', {
             title: 'Tellin Community',
             users,
         });

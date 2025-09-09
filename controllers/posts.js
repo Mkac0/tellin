@@ -1,13 +1,13 @@
 const express = require('express');
-const router = express.Router();
-
+const router = express.Router({ mergeParams: true });
 const User = require('../models/user.js');
 
+// index
 router.get('/', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
     res.render('content/index.ejs', {
-      posts: currentUser.posts,
+      posts: currentUser?.posts || [],
     });
   } catch (error) {
     console.log(error);
@@ -15,16 +15,18 @@ router.get('/', async (req, res) => {
   }
 });
 
+// new
 router.get('/new', async (req, res) => {
   res.render('posts/new.ejs');
 });
 
+// show
 router.get('/:postId', async (req, res) => {
   try {           
     const currentUser = await User.findById(req.session.user._id);
     const post = currentUser.posts.id(req.params.postId);  
     res.render('posts/show.ejs', {   
-      content: content,
+      post
     });
   } catch (error) {
     console.log(error);
@@ -32,12 +34,13 @@ router.get('/:postId', async (req, res) => {
   }
 });
 
+// edit
 router.get('/:postId/edit', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
     const post = currentUser.posts.id(req.params.postId);
     res.render('content/edit.ejs', {
-      post: post,
+      posts
     });
   } catch (error) {
     console.log(error);
@@ -45,6 +48,7 @@ router.get('/:postId/edit', async (req, res) => {
   }
 });
 
+// create
 router.post('/', async (req, res) => {
   try {   
     const currentUser = await User.findById(req.session.user._id);
@@ -57,6 +61,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+// update
 router.put('/:postId', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
@@ -72,10 +77,12 @@ router.put('/:postId', async (req, res) => {
   }
 });
 
+// delete
 router.delete('/:postId', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);  
-    currentUser.posts.id(req.params.postId).deleteOne();
+    const post = currentUser.posts.id(req.params.postId);
+    if (post) post.deleteOne();
     await currentUser.save();   
     res.redirect(`/users/${currentUser._id}/posts`); 
   } catch (error) {

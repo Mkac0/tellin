@@ -29,11 +29,10 @@ const userSchema = new mongoose.Schema({
     type: String, 
     required: true 
   },
-  post: { 
+  posts: { 
     type: [postSchema]
   },
 });
 
 const User = mongoose.model('User', userSchema);
-
 module.exports = User;

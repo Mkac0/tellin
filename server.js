@@ -13,7 +13,7 @@ const session = require('express-session');
 const authController = require('./controllers/auth.js');
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
-const usersController = require('./controllers/posts.js');
+const postsController = require('./controllers/posts.js');
 
 const port = process.env.PORT ? process.env.PORT : '3000';
 
@@ -42,8 +42,6 @@ app.use(
 app.use(passUserToView);
 
 // ------     Routes     ------
-app.get('/users', usersController.index);
-
 app.get('/', (req, res) => {
   if (req.session.user) {
     res.redirect(`/users/${req.session.user._id}/posts`);
@@ -51,6 +49,9 @@ app.get('/', (req, res) => {
     res.render('index.ejs');
   }
 });
+
+app.use('/users/:userId/posts', postsController);
+app.use('/posts', postsController);
 
 app.use('/auth', authController);
 app.use(isSignedIn);

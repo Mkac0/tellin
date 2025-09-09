@@ -11,7 +11,6 @@ const session = require('express-session');
 
 // ------     Middleware      -------
 const authController = require('./controllers/auth.js');
-const foodsController = require('./controllers/foods.js');
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 const usersController = require('./controllers/users');
@@ -55,7 +54,6 @@ app.get('/', (req, res) => {
 
 app.use('/auth', authController);
 app.use(isSignedIn);
-app.use('/users/:userId/foods', foodsController);
 
 // ------     Listener      ------
 app.listen(port, () => {

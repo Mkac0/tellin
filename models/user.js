@@ -1,15 +1,24 @@
 const mongoose = require('mongoose');
 
-const foodSchema = new mongoose.Schema({ 
+const postSchema = new mongoose.Schema({ 
   name: { 
     type: String, 
-    required: true 
+    required: true,
+    trim: true
   },
-  recipe: {
+  description: {
     type: String,
-    required: true
-  }
-});
+    required: true,
+    trim: true
+  },
+  content: {
+    type: String,
+    required: true,
+    trim: true
+  },
+},
+{ _id: true }
+);
 const userSchema = new mongoose.Schema({
   username: { 
     type: String, 
@@ -18,8 +27,10 @@ const userSchema = new mongoose.Schema({
   },
   password: { 
     type: String, 
-    required: true },
-  pantry: { type: [foodSchema]
+    required: true 
+  },
+  post: { 
+    type: [postSchema]
   },
 });
 

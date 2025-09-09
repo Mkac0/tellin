@@ -46,7 +46,7 @@ app.get('/users', usersController.index);
 
 app.get('/', (req, res) => {
   if (req.session.user) {
-    res.redirect(`/users/${req.session.user._id}/foods`);
+    res.redirect(`/users/${req.session.user._id}/content`);
   } else {
     res.render('index.ejs');
   }

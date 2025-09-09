@@ -1,13 +1,12 @@
 <nav>
   <div class="navbar">
-    <h1 id="nav-header">Cookbook</h1>
+    <h1 id="nav-header">tellin'</h1>
     <div class="nav-links">
-      <a href="/pantry">My Pantry</a>
-      <a href="/recipes">Recipes</a>
-      <a href="/users">Explore Our Community</a>
+      <a href="/content">Content</a>
+      <a href="/users">Explore tellin'</a>
 
       <% if (user) { %>
-        <a href="/users/<%= user._id %>/foods">View my Pantry</a>
+        <a href="/users/<%= user._id %>/foods">View my Posts</a>
         <a href="/auth/sign-out">Sign Out</a>
       <% } else { %>
         <a class="authlink" href="/auth/sign-in">Sign In</a>

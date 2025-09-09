@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community</title>
+    <title>tellin'</title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <main class="container">
-        <h1>Explore Our Community</h1>
+        <h1>Explore tellin'</h1>
         <% if (!users || users.length === 0) { %>
-            <p>No users yet. Be the first to join!</p>
+            <p>Sign up!</p>
             <% } else { %>
             <ul class="user-grid">
                 <% users.forEach(user => { %>

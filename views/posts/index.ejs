@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Your Posts</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <div class="all-apps-body">
+        <div class="all-apps-header">
+            <h1>Your Posts</h1>
+            <a class="add-app-link" href="/users/<%=user._id%>/posts/new"
+                >Add Post</a
+            >
+        </div>
+        <ul>
+            <% posts.forEach((application)=>{ %>
+            <a href="/users/<%= user._id %>/applications/<%= application._id %>">
+                <li><%= post.name %> - <%= post.description %></li>
+            </a>
+            <% }) %>
+        </ul>
+    </div>
+</body>
+</html>

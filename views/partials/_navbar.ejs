@@ -2,11 +2,11 @@
   <div class="navbar">
     <h1 id="nav-header">tellin'</h1>
     <div class="nav-links">
-      <a href="/content">Content</a>
+      <a href="/posts">Content</a>
       <a href="/users">Explore tellin'</a>
 
       <% if (user) { %>
-        <a href="/users/<%= user._id %>/content">View my Posts</a>
+        <a href="/users/<%= user._id %>/posts">View my Posts</a>
         <a href="/auth/sign-out">Sign Out</a>
       <% } else { %>
         <a class="authlink" href="/auth/sign-in">Sign In</a>

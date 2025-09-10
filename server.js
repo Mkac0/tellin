@@ -56,11 +56,9 @@ app.get('/', (req, res) => {
   }
 });
 
-app.use('/users/:userId/posts', postsController);
-app.use('/posts', postsController);
-
 app.use('/auth', authController);
 app.use(isSignedIn);
+app.use('/users/:userId/posts', postsController);
 
 // ------     Listener      ------
 app.listen(port, () => {

@@ -5,9 +5,10 @@ const User = require('../models/user.js');
 // index
 router.get('/', async (req, res) => {
   try {
-    const currentUser = await User.findById(req.session.user._id);
+    const user = await User.findById(req.session.user._id);
     res.render('posts/index.ejs', {
-      posts: currentUser.posts || [],
+      user: user,
+      posts: user.posts || [],
     });
   } catch (error) {
     console.log(error);
@@ -17,16 +18,20 @@ router.get('/', async (req, res) => {
 
 // new
 router.get('/new', async (req, res) => {
-  res.render('posts/new.ejs');
+    const user = await User.findById(req.session.user._id);
+    res.render('posts/new.ejs', {
+        user: user,
+        foods: user.posts,
+    });
 });
 
-// show
-router.get('/:postId', async (req, res) => {
-  try {           
-    const currentUser = await User.findById(req.session.user._id);
-    const post = currentUser.posts.id(req.params.postId);  
-    res.render('posts/show.ejs', {   
-      post
+// edit
+router.get('/:postId/edit', async (req, res) => {
+  try {
+    const user = await User.findById(req.session.user._id);
+    const post = user.posts.id(req.params.postId);
+    res.render('posts/edit.ejs', {
+      user: user, post
     });
   } catch (error) {
     console.log(error);
@@ -34,13 +39,13 @@ router.get('/:postId', async (req, res) => {
   }
 });
 
-// edit
-router.get('/:postId/edit', async (req, res) => {
-  try {
-    const currentUser = await User.findById(req.session.user._id);
-    const post = currentUser.posts.id(req.params.postId);
-    res.render('content/edit.ejs', {
-      post
+// show
+router.get('/:postId', async (req, res) => {
+  try {           
+    const user = await User.findById(req.session.user._id);
+    const post = user.posts.id(req.params.postId);  
+    res.render('posts/show.ejs', {   
+      user: user, post
     });
   } catch (error) {
     console.log(error);
@@ -51,43 +56,40 @@ router.get('/:postId/edit', async (req, res) => {
 // create
 router.post('/', async (req, res) => {
   try {   
-    const currentUser = await User.findById(req.session.user._id);
-    currentUser.posts.push(req.body);
-    await currentUser.save(); 
-    res.redirect(`/users/${currentUser._id}/posts`); 
+    const user = await User.findById(req.session.user._id);
+    user.posts.push(req.body);
+    await user.save(); 
+    res.redirect(`/users/${req.params.userId}/posts`); 
   } catch (error) { 
     console.log(error);
-    res.redirect('/');
+    res.redirect(`/users/${req.params.userId}/posts`);
   }
 });
 
 // update
 router.put('/:postId', async (req, res) => {
   try {
-    const currentUser = await User.findById(req.session.user._id);
-    const post = currentUser.posts.id(req.params.postId);
+    const user = await User.findById(req.session.user._id);
+    const post = user.posts.id(req.params.postId);
     post.set(req.body);      
-    await currentUser.save();       
-    res.redirect(                   
-      `/users/${currentUser._id}/posts/${req.params.postId}`
-    );
+    await user.save();       
+    res.redirect(`/users/${req.params.userId}/posts/${req.params.postId}`);
   } catch (error) {
     console.log(error);
-    res.redirect('/');
+    res.redirect(`/users/${req.params.userId}/posts`);
   }
 });
 
 // delete
 router.delete('/:postId', async (req, res) => {
   try {
-    const currentUser = await User.findById(req.session.user._id);  
-    const post = currentUser.posts.id(req.params.postId);
-    if (post) post.deleteOne();
-    await currentUser.save();   
-    res.redirect(`/users/${currentUser._id}/posts`); 
+    const user = await User.findById(req.session.user._id);  
+    user.posts.id(req.params.postId)?.deleteOne();
+    await user.save();   
+    res.redirect(`/users/${req.params.userId}/posts`); 
   } catch (error) {
     console.log(error);
-    res.redirect('/'); 
+    res.redirect(`/users/${req.params.userId}/posts`); 
   }
 });
 

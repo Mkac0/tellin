@@ -5,7 +5,6 @@ const postSchema = new mongoose.Schema({
     type: String,
     ref: 'User',
     required: true,
-    trim: true
   },
   description: {
     type: String,
@@ -26,7 +25,10 @@ const userSchema = new mongoose.Schema({
     type: String, 
     required: true 
   },
-  post: [postSchema]
+  post: {
+    type: [postSchema],
+    default: []
+  }
 });
 
 const User = mongoose.model('User', userSchema);

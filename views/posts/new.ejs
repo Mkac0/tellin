@@ -11,11 +11,13 @@
     <div class="new-body">
     <form action="/users/<%= user._id %>/posts" method="POST">
         <label for="name">Name</label>
-        <input type="text" name="name" id="name" />
+        <input type="text" name="name" id="name" required />
 
         <label for="description">Description</label>
         <input type="text" name="description" id="description" />
 
+        <label for="image">Image (URL)</label>
+        <input type="text" name="image" id="image" />
         <button type="submit">Post!</button>
     </form>
     </div>

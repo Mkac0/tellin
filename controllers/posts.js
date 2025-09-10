@@ -20,8 +20,7 @@ router.get('/', async (req, res) => {
 router.get('/new', async (req, res) => {
     const user = await User.findById(req.session.user._id);
     res.render('posts/new.ejs', {
-        user: user,
-        foods: user.posts,
+        user
     });
 });
 
@@ -31,7 +30,7 @@ router.get('/:postId/edit', async (req, res) => {
     const user = await User.findById(req.session.user._id);
     const post = user.posts.id(req.params.postId);
     res.render('posts/edit.ejs', {
-      user: user, post
+      user, post
     });
   } catch (error) {
     console.log(error);

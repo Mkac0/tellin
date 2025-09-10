@@ -16,15 +16,21 @@ const authController = require('./controllers/auth.js');
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 const postsController = require('./controllers/posts.js');
+const usersController = require('./controllers/users.js');
 
 const port = process.env.PORT ? process.env.PORT : '3000';
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('dev'));
+app.use('/auth', authController);
+app.use('/users', usersController);
+app.use(isSignedIn);
+app.use('/users/:userId/posts', postsController);
 
 // ------     DB      ------
 mongoose.connect(process.env.MONGODB_URI);

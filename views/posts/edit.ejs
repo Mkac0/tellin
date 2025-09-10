@@ -8,24 +8,16 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <div class="edit-body">
-    <h1>Edit <%= post.description in <%= post.name %></h1>
-    <form
-        action="/users/<%= user._id %>/posts/<%= post._id %>?_method=PUT"
-        method="POST"
-    >
+    <h1>Edit <%= post.name %></h1>
+    <form action="/users/<%= user._id %>/posts/<%= post._id %>?_method=PUT" method="POST">
         <label for="name">name</label>
-        <input type="text" name="name" id="name" value="<%= poast.name %>">
+        <input type="text" name="name" id="name" value="<%= post.name %>">
 
         <label for="description">description</label>
         <textarea name="description" id="description"><%= post.description %></textarea>
 
-        <label for="image">Image</label>
-        <input
-            type="image"
-            name="image"
-            id="image"
-            value="<%= post.image %>"
-        >
+        <label for="image">Image (URL)</label>
+        <input type="text" name="image" id="image" value="<%= post.image || '' %>">
 
         <button type="submit">Update Post</button>
     </form>

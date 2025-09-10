@@ -10,19 +10,11 @@
     <h1>New Post</h1>
     <div class="new-body">
     <form action="/users/<%= user._id %>/posts" method="POST">
-        <label for="name">name</label>
-        <input type="text" name="name" id="name" value="<%= poast.name %>">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" />
 
-        <label for="description">description</label>
-        <textarea name="description" id="description"><%= post.description %></textarea>
-
-        <label for="image">Image</label>
-        <input
-            type="image"
-            name="image"
-            id="image"
-            value="<%= post.image %>"
-        >
+        <label for="description">Description</label>
+        <input type="text" name="description" id="description" />
 
         <button type="submit">Post!</button>
     </form>

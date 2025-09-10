@@ -29,9 +29,7 @@ const userSchema = new mongoose.Schema({
     type: String, 
     required: true 
   },
-  posts: { 
-    type: [postSchema]
-  },
+  posts: [postSchema]
 });
 
 const User = mongoose.model('User', userSchema);

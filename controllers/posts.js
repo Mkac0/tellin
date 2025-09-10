@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
     res.render('posts/index.ejs', {
-      posts: currentUser?.posts || [],
+      posts: currentUser.posts || [],
     });
   } catch (error) {
     console.log(error);
@@ -40,7 +40,7 @@ router.get('/:postId/edit', async (req, res) => {
     const currentUser = await User.findById(req.session.user._id);
     const post = currentUser.posts.id(req.params.postId);
     res.render('content/edit.ejs', {
-      posts
+      post
     });
   } catch (error) {
     console.log(error);

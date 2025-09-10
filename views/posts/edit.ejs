@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editing <%= post.name %></title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <div class="edit-body">
+    <h1>Edit <%= post.description in <%= post.name %></h1>
+    <form
+        action="/users/<%= user._id %>/posts/<%= post._id %>?_method=PUT"
+        method="POST"
+    >
+        <label for="name">name</label>
+        <input type="text" name="name" id="name" value="<%= poast.name %>">
+
+        <label for="description">description</label>
+        <textarea name="description" id="description"><%= post.description %></textarea>
+
+        <label for="postingImg">Posting Image</label>
+        <input
+            type="image"
+            name="postingImg"
+            id="postingImg"
+            value="<%= post.postingImg %>"
+        >
+
+        <button type="submit">Update Post</button>
+    </form>
+    </div>
+</body>
+</html>

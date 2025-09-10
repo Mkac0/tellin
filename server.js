@@ -27,10 +27,6 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('dev'));
-app.use('/auth', authController);
-app.use('/users', usersController);
-app.use(isSignedIn);
-app.use('/users/:userId/posts', postsController);
 
 // ------     DB      ------
 mongoose.connect(process.env.MONGODB_URI);
@@ -63,6 +59,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/auth', authController);
+app.use('/users', usersController);
 app.use(isSignedIn);
 app.use('/users/:userId/posts', postsController);
 

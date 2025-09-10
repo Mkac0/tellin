@@ -2,19 +2,16 @@ const mongoose = require('mongoose');
 
 const postSchema = new mongoose.Schema({ 
   name: { 
-    type: String, 
+    type: String,
+    ref: 'User',
     required: true,
     trim: true
   },
   description: {
     type: String,
-    required: true,
-    trim: true
   },
   content: {
     type: String,
-    required: true,
-    trim: true
   },
 },
 { _id: true }
@@ -29,7 +26,7 @@ const userSchema = new mongoose.Schema({
     type: String, 
     required: true 
   },
-  posts: [postSchema]
+  post: [postSchema]
 });
 
 const User = mongoose.model('User', userSchema);

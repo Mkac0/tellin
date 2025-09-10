@@ -2,12 +2,14 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const express = require('express');
+const path = require('path')
 const router = express.Router({ mergeParams: true });
-const app = express();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
 const session = require('express-session');
+
+const app = express();
 
 // ------     Middleware      -------
 const authController = require('./controllers/auth.js');
@@ -17,19 +19,18 @@ const postsController = require('./controllers/posts.js');
 
 const port = process.env.PORT ? process.env.PORT : '3000';
 
-const path = require('path');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(morgan('dev'));
 
+// ------     DB      ------
 mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on('connected', () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
-
-app.use(express.urlencoded({ extended: false }));
-app.use(methodOverride('_method'));
-
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(
   session({
@@ -40,6 +41,11 @@ app.use(
 );
 
 app.use(passUserToView);
+
+app.use((req, res, next) => {
+  res.locals.currentUser = req.session.user || null;
+  next();
+});
 
 // ------     Routes     ------
 app.get('/', (req, res) => {

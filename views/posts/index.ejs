@@ -16,8 +16,8 @@
             >
         </div>
         <ul>
-            <% posts.forEach((application)=>{ %>
-            <a href="/users/<%= user._id %>/applications/<%= application._id %>">
+            <% posts.forEach((post)=>{ %>
+            <a href="/users/<%= user._id %>/posts/<%= post._id %>">
                 <li><%= post.name %> - <%= post.description %></li>
             </a>
             <% }) %>

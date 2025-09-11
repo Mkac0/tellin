@@ -223,7 +223,7 @@ body {
     margin: 0;
 }
 .new-form-title {
-    color: white;
+    color: #fff;
     text-align: center;
 }
 .new-body {
@@ -361,4 +361,68 @@ body {
 }
 .show-back-btn:hover { 
     background: #305848; 
+}
+.edit-body {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 24px;
+    background: #4b6a5b;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px #074732;
+}
+.edit-body h1 {
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #c6c8cd;
+}
+.edit-post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.edit-form-group {
+    display: flex;
+    flex-direction: column;
+}
+.edit-form-group label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #c6c8cd;
+}
+.edit-form-group input,
+.edit-form-group textarea {
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.edit-form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+.edit-form-group input:focus,
+.edit-form-group textarea:focus {
+    border-color: #6b8c7c;
+    box-shadow: 0 0 0 3px #074732;
+    outline: none;
+}
+.edit-button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #6b8c7c;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.edit-button:hover {
+  background: #074732;
+  transform: translateY(-2px);
+}
+textarea {
+  overflow: hidden;
+  resize: none;
 }

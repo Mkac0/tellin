@@ -9,19 +9,32 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <div class="edit-body">
-    <h1>Edit <%= post.name %></h1>
-    <form action="/users/<%= user._id %>/posts/<%= post._id %>?_method=PUT" method="POST">
-        <label for="name">name</label>
-        <input type="text" name="name" id="name" value="<%= post.name %>">
-
-        <label for="description">description</label>
-        <textarea name="description" id="description"><%= post.description %></textarea>
-
-        <label for="image">Image (URL)</label>
-        <input type="text" name="image" id="image" value="<%= post.image || '' %>">
-
-        <button type="submit">Update Post</button>
-    </form>
+        <h1>Edit <%= post.name %></h1>
+        <form action="/users/<%= user._id %>/posts/<%= post._id %>?_method=PUT" method="POST" class="edit-post-form">
+            <div class="edit-form-group">
+                <label for="edit-name">Name</label>
+                <input type="text" name="name" id="edit-name" value="<%= post.name %>">
+            </div>
+            <div class="edit-form-group">
+                <label for="edit-description">Description</label>
+                <textarea name="description" id="edit-description"
+                    oninput="autoResize(this)"><%= post.description %></textarea>
+                <script>
+                    function autoResize(textarea) {
+                        textarea.style.height = "auto";
+                        textarea.style.height = textarea.scrollHeight + "px";
+                    }
+                    window.addEventListener("DOMContentLoaded", () => {
+                    document.querySelectorAll("textarea").forEach(autoResize);
+                    });
+                </script>
+            </div>
+            <div class="edit-form-group">
+                <label for="edit-image">Image (URL)</label>
+                <input type="text" name="image" id="edit-image" value="<%= post.image || '' %>">
+            </div>
+                <button type="submit" class="edit-button">Update Post</button>
+        </form>
     </div>
 </body>
 </html>

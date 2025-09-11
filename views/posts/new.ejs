@@ -8,19 +8,26 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>New Post</h1>
+    <h1 class="new-form-title">New Post</h1>
     <div class="new-body">
-    <form action="/users/<%= user._id %>/posts" method="POST">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" required />
+        <form action="/users/<%= user._id %>/posts" method="POST" class="new-post-form">
+            <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required />
+            </div>
 
-        <label for="description">Description</label>
-        <input type="text" name="description" id="description" />
+            <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" name="description" id="description" />
+            </div>
 
-        <label for="image">Image (URL)</label>
-        <input type="text" name="image" id="image" />     
-        <button type="submit">Post!</button>
-    </form>
+            <div class="form-group">
+            <label for="image">Image (URL)</label>
+            <input type="text" name="image" id="image" />
+            </div>
+
+            <button type="submit" class="btn-submit">Post!</button>
+        </form>
     </div>
 </body>
 </html>

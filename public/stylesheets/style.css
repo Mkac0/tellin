@@ -77,7 +77,6 @@ body {
 .auth-bar, .auth-sign-up-bar {
     width: min(520px, 92vw);
     background: #fff;
-    border: 2px solid #98b7a8;
     border-radius: 16px;
     padding: 28px;
     background-color: #4b6a5b;
@@ -222,4 +221,62 @@ body {
     font-size: 0.95rem;
     color: #4b5563;
     margin: 0;
+}
+.new-form-title {
+    color: white;
+    text-align: center;
+}
+.new-body {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 24px;
+    background-color: #4b6a5b;
+    box-shadow: 0 8px 20px #073224;
+    border-radius: 16px;
+}
+.new-body h1 {
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #1f2937;
+}
+.new-post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #fff;
+}
+.form-group input {
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-group input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+    outline: none;
+}
+.btn-submit {
+    padding: 12px;
+    border: 2px solid #98b7a8;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.2s;
+    color: #fff;
+    background: #6b8c7c;
+    cursor: pointer;
+    box-shadow: 0 8px 20px #074732;
+}
+.btn-submit:hover {
+    background: #1d5848;
 }

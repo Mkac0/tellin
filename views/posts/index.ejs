@@ -4,24 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title>Your Posts</title>
+    <title>My Posts</title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <div class="all-apps-body">
-        <div class="all-apps-header">
-            <h1>Your Posts</h1>
-            <a class="add-app-link" href="/users/<%=user._id%>/posts/new"
-                >Add Post</a
-            >
-        </div>
-        <ul>
-            <% posts.forEach((post)=>{ %>
+    <div class="page">
+    <div class="all-apps-header">
+        <h1 class="post-title">Posts</h1>
+        <a class="post-btn" href="/users/<%= user._id %>/posts/new">Add Post</a>
+    </div>
+    <ul class="post-list">
+        <% posts.forEach((post) => { %>
+        <li class="post-card <%= posts.length === 1 ? 'horizontal' : '' %>">
             <a href="/users/<%= user._id %>/posts/<%= post._id %>">
-                <li><%= post.name %> - <%= post.description %></li>
+                <% if (post.image) { %>
+                    <img class="thumb" src="<%= post.image %>" alt="<%= post.name %> thumbnail"
+                    onerror="this.style.display='none'"/>
+                <% } %>
+                <div class="post-info">
+                    <h2><%= post.name %></h2>
+                    <p><%= post.description %></p>
+                </div>
             </a>
-            <% }) %>
-        </ul>
+        </li>
+        <% }) %>
+    </ul>
     </div>
 </body>
 </html>

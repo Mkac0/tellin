@@ -150,3 +150,76 @@ body {
 .sign-up-button:hover {
     background: #1d5848;
 }
+.post-title {
+    color: #babcc1;
+}
+.page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+.all-apps-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+.post-card { 
+    background: #babcc1;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+    transition: transform .2s, box-shadow .2s;
+}
+.post-btn {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #babcc1;
+    color: #2a493b;
+    text-decoration: none;
+    border: 1px solid rgba(241, 243, 246, 0.73);
+}
+.post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(0,0,0,0.12);
+}
+.post-card a {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+.thumb { 
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+.post-card:hover .thumb {
+    transform: scale(1.05);
+}
+.post-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 12px;
+    justify-items: stretch;
+}
+.post-info {
+    padding: 14px 16px 18px;
+}
+.post-info h2 {
+    margin: 0 0 7px;
+    font-size: 1.2rem;
+    color: #111827;
+}
+.post-info p {
+    font-size: 0.95rem;
+    color: #4b5563;
+    margin: 0;
+}

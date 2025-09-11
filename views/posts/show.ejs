@@ -9,7 +9,11 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1><%= post.name %></h1>
-    <p>-<%= post.description %></p>
+    <% if (post.image) { %>
+        <img class="post-image" src="<%= post.image %>" alt="<%= post.name %>"
+            onerror="this.style.display='none'" />
+    <% } %>
+    <p><%= post.description %></p>
     <a href="/users/<%= user._id %>/posts/<%= post._id %>/edit">Edit</a>
     <form
         action="/users/<%= user._id %>/posts/<%= post._id %>?_method=DELETE"

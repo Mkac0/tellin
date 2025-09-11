@@ -8,19 +8,20 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1><%= post.name %></h1>
-    <% if (post.image) { %>
-        <img class="post-image" src="<%= post.image %>" alt="<%= post.name %>"
+    <div class="show-post">
+        <h1 class="show-post-title"><%= post.name %></h1>
+        <% if (post.image) { %>
+        <img class="show-post-image" src="<%= post.image %>" alt="<%= post.name %>"
             onerror="this.style.display='none'" />
-    <% } %>
-    <p><%= post.description %></p>
-    <a href="/users/<%= user._id %>/posts/<%= post._id %>/edit">Edit</a>
-    <form
-        action="/users/<%= user._id %>/posts/<%= post._id %>?_method=DELETE"
-        method="POST"
-        >
-        <button type="submit">Delete Post</button>
-    </form>
-    <p><a href="/users/<%= user._id %>/posts">Back to list</a></p>
+        <% } %>
+        <p class="show-post-description"><%= post.description %></p>
+        <div class="post-actions">
+            <a href="/users/<%= user._id %>/posts/<%= post._id %>/edit" class="show-edit-btn">Edit Post</a>
+            <form action="/users/<%= user._id %>/posts/<%= post._id %>?_method=DELETE" method="POST">
+                <button type="submit" class="show-delete-btn">Delete Post</button>
+            </form>
+            <a href="/users/<%= user._id %>/posts" class="show-back-btn">Back to list</a>
+        </div>
+    </div>
 </body>
 </html>

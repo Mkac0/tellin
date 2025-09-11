@@ -8,20 +8,22 @@
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
-  <h1>Create a new account!</h1>
-  <form action="/auth/sign-up" method="POST">
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" required />
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" required />
-    <label for="confirmPassword">Confirm Password:</label>
-    <input 
-      type="password"
-      name="confirmPassword"
-      id="confirmPassword"
-      required 
-    />
-    <button type="submit">Sign up</button>
-  </form>
+  <div class="sign-up-bar">
+    <h1 class="sign-up-title">Create a new account!</h1>
+    <form class="sign-up-form" action="/auth/sign-up" method="POST">
+      <label class="create-username" for="username">Username:</label>
+      <input type="text" name="username" id="username" required />
+      <label class="create-password" for="password">Password:</label>
+      <input type="password" name="password" id="password" required />
+      <label  class="confirm-password" for="confirmPassword">Confirm Password:</label>
+      <input 
+        type="password"
+        name="confirmPassword"
+        id="confirmPassword"
+        required 
+      />
+      <button class="sign-up-button" type="submit">Sign up</button>
+    </form>
+  </div>
 </body>
 </html>

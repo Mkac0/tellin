@@ -1,11 +1,13 @@
 html, body { 
     margin: 0;
-    background-color: #05060723;
 }
 * { box-sizing: border-box; }
 .main-header {
-    color: rgb(165, 163, 163);
+    color: rgb(184, 191, 188);
     text-align: center;
+}
+body {
+    background-color: #1c4c3cc4;
 }
 .navbar {
     display: flex;
@@ -75,10 +77,11 @@ html, body {
 .auth-bar {
     width: min(520px, 92vw);
     background: #fff;
-    border: 2px solid #111;
+    border: 2px solid #98b7a8;
     border-radius: 16px;
     padding: 28px;
     background-color: #4b6a5b;
+    box-shadow: 0 8px 20px #073224;
 }
 .auth-title {
     text-align: center;
@@ -100,17 +103,22 @@ html, body {
 }
 .auth-form input:focus {
     box-shadow: 0 0 0 4px rgba(59,130,246,.2);
-    border-color: #5680dc;
+    border-color: #4e8775;
+}
+.auth-form input::placeholder { 
+    color: #94a3b8; 
 }
 #sign-in-btn {
     width: 100%;
-    padding: 12px 16px;
+    height: 48px;
+    font-size: 16px;
     font-weight: 700;
     border: 0;
     border-radius: 12px;
     color: #fff;
     background: #6b8c7c;
     cursor: pointer;
+    box-shadow: 0 8px 20px #074732;
 }
 #username {
     color: #d9dee7;
@@ -120,6 +128,6 @@ html, body {
     color: #d9dee7;
     font-size: 18px;
 }
-.btn-primary:hover { 
-    background: #2563eb; 
+#sign-in-btn:hover { 
+    background: #1d5848; 
 }

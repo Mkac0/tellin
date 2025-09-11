@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/style.css" />
-  <title>tellin'</title>
+  <title id="nav-header">tellin'</title>
 </head>
 <body class="index-body">
   <%- include('partials/_navbar.ejs') %>
@@ -13,8 +13,8 @@
       <h1 class="main-header">Welcome to tellin'!</h1>
     </div>
     <div class="auth-links">
-      <a href="/auth/sign-up">Sign up</a> or
-      <a href="/auth/sign-in">Sign in</a>.
+      <a class="btn sign-up" href="/auth/sign-up">Sign up</a>
+      <a class="btn sign-in" href="/auth/sign-in">Sign in</a>
     </div>
   </div>
 </body>

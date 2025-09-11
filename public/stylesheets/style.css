@@ -1,0 +1,125 @@
+html, body { 
+    margin: 0;
+    background-color: #05060723;
+}
+* { box-sizing: border-box; }
+.main-header {
+    color: rgb(165, 163, 163);
+    text-align: center;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    background: #c2c3c65d;
+}
+#nav-header {
+    margin: 0;
+    color: white;
+}
+.nav-header {
+    display: flex;
+    margin-left: auto;
+    width: auto;
+}
+.nav-links {
+    display: flex;
+    gap: 18px;
+    white-space: nowrap;
+}
+.nav-links a:link,
+.nav-links a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+.nav-links a:hover {
+    background: rgba(255,255,255,.12);
+    border-radius: 10px;
+    padding: 6px 10px;
+}
+.btn {
+    display:inline-block;
+    padding:10px 16px;
+    border-radius:12px;
+    border:1px solid #d9dee7;
+    background:#fff;
+    color:#0f172a;
+    font-weight:600;
+    text-decoration:none;
+    box-shadow:0 6px 18px rgba(2,6,23,.06);
+}
+.sign-in {
+    background:#4b6a5b; 
+    border-color:#f0f1f4; 
+    color:#fff;
+}
+.sign-up {
+    background:#fff; 
+    border-color:#f0f1f4; 
+    color:#4b6a5b;
+}
+.auth-links {
+    display:flex;
+    gap:12px;
+    align-items:center;
+    justify-content:center;
+    margin-top:12px;
+}
+.sign-in-bar {
+    min-height: calc(80vh - 100px);
+    display: grid; place-items: center;
+    place-items: center;
+    padding: 24px;
+}
+.auth-bar {
+    width: min(520px, 92vw);
+    background: #fff;
+    border: 2px solid #111;
+    border-radius: 16px;
+    padding: 28px;
+    background-color: #4b6a5b;
+}
+.auth-title {
+    text-align: center;
+    margin: 0 0 18px;
+    font-size: 28px;
+}
+.auth-form{
+    display: grid;
+    gap: 16px;
+}
+.auth-form input {
+    display: block;
+    width: 100%;
+    padding: 16px 18px;
+    font-size: 15px;
+    border: 2px solid #92a05f;
+    border-radius: 14px;
+    outline: none;
+}
+.auth-form input:focus {
+    box-shadow: 0 0 0 4px rgba(59,130,246,.2);
+    border-color: #5680dc;
+}
+#sign-in-btn {
+    width: 100%;
+    padding: 12px 16px;
+    font-weight: 700;
+    border: 0;
+    border-radius: 12px;
+    color: #fff;
+    background: #6b8c7c;
+    cursor: pointer;
+}
+#username {
+    color: #d9dee7;
+    font-size: 18px;
+}
+#password {
+    color: #d9dee7;
+    font-size: 18px;
+}
+.btn-primary:hover { 
+    background: #2563eb; 
+}

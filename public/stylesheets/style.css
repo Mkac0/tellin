@@ -422,7 +422,17 @@ body {
   background: #074732;
   transform: translateY(-2px);
 }
-textarea {
+#edit-description {
   overflow: hidden;
   resize: none;
+}
+#new-description {
+    resize: none;
+    overflow: hidden;
+    min-height: 80px; 
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    line-height: 1.4;
 }

@@ -9,6 +9,7 @@
 <body>
   <%- include('../partials/_navbar.ejs') %>
   <div class="sign-up-bar">
+    <div class="auth-sign-up-bar">
     <h1 class="sign-up-title">Create a new account!</h1>
     <form class="sign-up-form" action="/auth/sign-up" method="POST">
       <label class="create-username" for="username">Username:</label>
@@ -23,7 +24,8 @@
         required 
       />
       <button class="sign-up-button" type="submit">Sign up</button>
-    </form>
+    </div>
   </div>
+    </form>
 </body>
 </html>

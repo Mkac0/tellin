@@ -1,10 +1,6 @@
 # tellin'
 ![tellin'](https://i.imgur.com/j4j5zz9.png)
 
-+ Deployed project link: https://tellin-7168d99553e2.herokuapp.com/
-+ GitHub repo link: https://github.com/Mkac0/tellin
-+ Project planning link: https://trello.com/b/FpOUWllD
-
 ## What is tellin CRUD app?
 The tellin' CRUD app is a social blog site, where you can sign up, sign in, sign out and post your best photos, poems, short stories, etc.
 
@@ -62,3 +58,7 @@ While working on this project, one of my challenges was trying to determine whic
 
 ## Next Steps
 I plan on including more exciting features, such as likes, comments, and timeline page.
+
++ [Deployed project link](https://tellin-7168d99553e2.herokuapp.com/)
++ [GitHub repo link](https://github.com/Mkac0/tellin)
++ [Project planning link](https://trello.com/b/FpOUWllD)

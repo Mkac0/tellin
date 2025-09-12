@@ -43,9 +43,8 @@ While working on this project, one of my challenges was trying to determine whic
     Form more information on DOMContentLoaded event, visit [MDN:DOMContentLoaded](https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event).
 
 ### EJS Syntax, loops and arrays
-  + The `posts.forEach((post) => { ... })` loops over the posts array, generating one <li> for each post.
-      ++ Conditional classes, if only one post exists, add "horizontal" to the class list:
-        `` <%= posts.length === 1 ? 'horizontal' : '' %> ``
+  + The `posts.forEach((post) => { ... })` loops over the posts array, generating one `<li>` for each post. The conditional classes, if only one post exists, adds "horizontal" to the class list:
+         `` <%= posts.length === 1 ? 'horizontal' : '' %> ``
     For more information on `Array.prototype.forEach`, vsit [MDN:Array.prototype.forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
   + Dynamic attributes and conditional rendering, using `post.image`, which renders an `<img>` tag. And, The `onerror="this.style.display='none'"`, which hides the image if it fails to load.
     For more information on `<img>` the Image Embeded Element, visit [MDN:<img> Image Embeded Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img).

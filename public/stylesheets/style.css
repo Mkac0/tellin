@@ -40,6 +40,27 @@ body {
     border-radius: 10px;
     padding: 6px 10px;
 }
+.index-body {
+    background-color: #4a6a63;
+    margin: 0;
+    padding: 0;
+    color: #f4f4f4;
+}
+.index-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    text-align: center;
+}
+.main-header {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #aab1bb;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
 .btn {
     display:inline-block;
     padding:10px 16px;
@@ -60,6 +81,14 @@ body {
     background:#fff; 
     border-color:#f0f1f4; 
     color:#4b6a5b;
+}
+.sign-in:hover { 
+    background: #fff;
+    color: #4b6a5b;
+}
+.sign-up:hover {
+    background: #4b6a5b;
+    color: #fff;
 }
 .auth-links {
     display:flex;

@@ -4,7 +4,7 @@ const User = require('../models/user');
 
 router.get('/', async (req, res, next) => {
     try {
-        const users = await User.find({}, { username: 1, avatar: 1, bio: 1 })
+        const users = await User.find({}, { username: 1 })
         .sort({ username: 1 })
         .lean();
         res.render('users/index', {

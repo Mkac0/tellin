@@ -8,28 +8,46 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <main class="container">
-        <h1>Explore tellin'</h1>
-        <% if (!users || users.length === 0) { %>
-            <p>Join us!</p>
-            <% } else { %>
-            <ul class="user-grid">
-                <% users.forEach(user => { %>
-                <li class="user-card">
-                <div class="user-avatar">
-                    <% if (user.avatar) { %>
-                    <img src="<%= user.avatar %>" alt="<%= user.username %>'s avatar" />
-                    <% } else { %>
-                <% } %>
-                </div>
-                <div class="user-info">
-                    <h2 class="user-name"><%= user.username %></h2>
-                    <% if (user.bio) { %><p class="user-bio"><%= user.bio %></p><% } %>
-                </div>
-            </li>
-            <% }) %>
-            </ul>
-        <% } %>
+    <div class="explore-body">
+    <h1 class="header">tellin' me more!</h1>
+    <main>
+        <div class="photography">
+            <img src="https://i.imgur.com/3Rsm7w2.jpeg" alt="Sample photo" class="photo-img">
+            <div class="photo-info">
+                <h2 class="photo-title">Coney Island</h2>
+                <p class="photo-description">Fireworks by the beach, endless rollercoasters, and the best funnel cake in NYC. 
+                    I had to capture a photo of the perfect date. ~ Melissa Abreu</p>
+            </div>
+        </div>
+        <div class="poems">
+            <h2 class="poem-title">r.h. Sin</h2>
+            <p class="poem"><strong>sent, text message</strong> <br> 
+                you either be consistent or comer nonexistent.<br> <strong>the rules</strong><br>
+                    respect her mind<br>feed her soul<rb>protect her peace<br>
+                        guard her heart</rb></strong></rb> </p>
+        </div>
+        <div class="short-story">
+            <h2 class="short-story-title">The Gift of the Magi</h2>
+            <p class="shorts">One dollar and eighty-seven cents. That was all. And sixty cents of it was in 
+                pennies. Pennies saved one and two at a time by bulldozing the grocer and the vegetable man 
+                and the butcher until one's cheeks burned with the silent imputation of parsimony that such 
+                close dealing implied. Three times Della counted it. One dollar and eighty-seven cents. And 
+                the next day would be Christmas. There was clearly nothing left to do but flop down on the 
+                shabby little couch and howl. So Della did it. Which instigates the moral reflection that 
+                life is made up of sobs, sniffles, and smiles, with sniffles predominating. ~ O. Henry</p>
+        </div>
+        <div class="photography">
+            <img src="https://i.imgur.com/wxhE22r.jpeg" alt="Sample photo" class="photo-img">
+            <div class="photo-info">
+                <h2 class="photo-title">Bear Mountain</h2>
+                <p class="photo-description">A summer afternoon walk at Bear Mountain Park felt like 7 hours for Moises. ~ Melissa Abreu</p>
+            </div>
+        </div>
     </main>
+    <div class="sign-up-cta">
+        <p id="sign-up-msg">Haven't joined? I'm tellin' you!</p>
+        <button class="explore-sign-up" type="submit">Sign up now!</button>
+    </div>
+    </div>
 </body>
 </html>

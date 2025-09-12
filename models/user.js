@@ -8,6 +8,11 @@ const postSchema = new mongoose.Schema({
   description: String,
   content: String,
   image: String, 
+  category: {
+    type: String,
+    enum: ['poem', 'photo', 'story'],
+    required: true
+  }
 }, { _id: true });
 
 const userSchema = new mongoose.Schema({

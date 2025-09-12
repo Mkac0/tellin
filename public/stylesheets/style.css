@@ -436,3 +436,84 @@ body {
     font-size: 1rem;
     line-height: 1.4;
 }
+.explore-body {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    display: grid;
+}
+.header {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 400px;
+    color: #d1d5db;
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+.poems, .photography, .short-story {
+    background: #bbbfc4;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 6px 16px rgba(34, 82, 59, 0.775);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+.poems:hover, .photo-title:hover, .short-story:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(34, 82, 59, 0.775);
+}
+.poem-title, .photo-title, .short-story-title {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #111827;
+    font-size: 17px;
+}
+.poem, .shorts, .photo-description {
+    color: #4b5563;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.explore-sign-up {
+    grid-column: 1 / -1;
+    justify-self: center;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background: #6b8e7d;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 8px 20px rgba(34, 82, 59, 0.775);
+}
+.explore-sign-up:hover {
+    background: #567266;
+    transform: translateY(-2px);
+}
+.sign-up-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+}
+#sign-up-msg {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: #d1d5db;
+}
+.photo-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}

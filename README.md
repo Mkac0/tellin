@@ -80,3 +80,4 @@ I plan on including more exciting features, such as likes, comments, and timelin
 + [Deployed project link](https://tellin-7168d99553e2.herokuapp.com/)
 + [GitHub repo link](https://github.com/Mkac0/tellin)
 + [Project planning link](https://trello.com/b/FpOUWllD)
++ [Git Reference](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template)

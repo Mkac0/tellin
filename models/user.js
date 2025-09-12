@@ -11,7 +11,6 @@ const postSchema = new mongoose.Schema({
   category: {
     type: String,
     enum: ['poem', 'photo', 'story'],
-    required: true
   }
 }, { _id: true });
 

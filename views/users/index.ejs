@@ -20,7 +20,6 @@
                     <% if (user.avatar) { %>
                     <img src="<%= user.avatar %>" alt="<%= user.username %>'s avatar" />
                     <% } else { %>
-                <div class="avatar-fallback"><%= (user.username || '?').charAt(0).toUpperCase() %></div>
                 <% } %>
                 </div>
                 <div class="user-info">
